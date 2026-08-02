@@ -3,7 +3,7 @@
 Plain HTML/CSS/JS, no framework, no build step. Deploys to GitLab Pages via
 `.gitlab-ci.yml`, which just copies the site into a `public/` folder.
 
-**Why no static site generator:** the site is five pages and one shared
+**Why no static site generator:** the site is a handful of pages and one shared
 design system — a generator (Hugo/Eleventy) would add a build step and a
 templating layer for very little payoff at this size. If the site grows
 past ~15 pages, revisit that tradeoff.
@@ -11,21 +11,26 @@ past ~15 pages, revisit that tradeoff.
 ## Folder structure
 
 ```
-index.html                     ← home page (data-driven sections)
+index.html                       ← home page (data-driven sections)
 projects/
-  _template.html                ← duplicate this to add a new case study
+  _template.html                  ← duplicate this to add a new case study
   data-lineage-tracker.html
-  ado-migration.html
-  agile-operating-model.html
-  confluence-table-transformer.html
-  executive-dashboards.html
+  capacity-calculator.html
+  jira-quality-gates.html
+  portfolio-knowledge-hub.html
+  valuestream-performance-tracker.html
+  jira-automation.html
+pages/
+  certifications.html             ← Technical + Project Management certs
+  awards.html                     ← Awards & Achievements
+  beyond-delivery.html            ← Speaking/facilitation + personal pursuits
 assets/
-  css/style.css                 ← design system + all styles
-  js/site-data.js               ← ALL editable content lives here
-  js/main.js                    ← theme toggle, rendering, scroll reveal, carousel
-  images/                       ← headshot, project thumbnails, OG image
-  resume/                       ← put your resume PDF here
-.gitlab-ci.yml                  ← GitLab Pages deploy config
+  css/style.css                   ← design system + all styles
+  js/site-data.js                 ← ALL editable content lives here
+  js/main.js                      ← theme toggle, rendering, scroll reveal, carousel
+  images/                         ← headshot, project thumbnails, badges, OG image
+  resume/                         ← put your resume PDF here
+.gitlab-ci.yml                    ← GitLab Pages deploy config
 ```
 
 ## Editing content
@@ -58,13 +63,49 @@ touch HTML or CSS to:
   for link previews (currently reuses the headshot).
 - Add your resume PDF at `assets/resume/Tushar_Sonawane_Resume.pdf`
   (or update the path in `site-data.js` → `person.resumeFile`).
+- Replace `assets/images/headshot.jpg` with your real photo (any size —
+  it gets cropped automatically). The crop is controlled in
+  `assets/css/style.css` under `.photo-frame` (`aspect-ratio`) and
+  `.photo-frame img` (`object-position`, e.g. `center 18%` biases the
+  crop toward the top of the frame, away from empty floor/ceiling
+  space). Adjust those two values to reframe any photo you swap in.
 
-### Testimonials
+### Contact icons (under the hero photo)
 
-The three testimonial cards are placeholders. Replace `quote`, `name`,
-`role`, and `company` in `site-data.js` once you have sign-off from real
-colleagues, then delete the "placeholder" note in `index.html` (search
-for `placeholder-note`).
+The row under the photo (LinkedIn / Email / WhatsApp) is driven entirely
+by `person` in `site-data.js`:
+
+- `person.linkedin` — your full LinkedIn profile URL
+- `person.email` — opens the visitor's default mail app addressed to you
+- `person.whatsapp` — country code + number, digits only, no `+` or
+  spaces (e.g. `919876543210` for an Indian number `+91 98765 43210`)
+
+Update those three values and all three icons work immediately — no
+other file needs to change. (Certification badges are parked for now;
+ask if you want them added back later.)
+
+### Hidden homepage sections
+
+Testimonials, About, and Contact are currently removed from `index.html`
+(and from the nav) at your request. The data for them (`testimonials`,
+`about`) is still sitting in `site-data.js` and the render logic for them
+is still in `main.js` — nothing was deleted, just unplugged — so you can
+bring any of them back later by re-adding the corresponding `<section>`
+block (see git history / ask for it again) without touching JS.
+
+### Certifications / Awards / Beyond Delivery — the "active" pattern
+
+All three new pages (`pages/certifications.html`, `pages/awards.html`,
+`pages/beyond-delivery.html`) work the same way: every entry in
+`site-data.js` has an `active: true/false` flag, and only `active: true`
+entries render on the live page. This lets you pre-fill placeholder
+slots (e.g. 5 empty "Technical Certification" rows) without any of them
+showing up until you've actually filled in the real name/issuer/brief
+and flipped `active` to `true`. To publish one: fill in its fields,
+set `active: true`, and drop its image into the matching folder
+(`assets/images/certs/`, `assets/images/awards/`, or
+`assets/images/beyond/`). If every entry in a group is inactive, the
+page shows a plain "coming soon" message instead of an empty gap.
 
 ## Deploying to GitLab Pages
 

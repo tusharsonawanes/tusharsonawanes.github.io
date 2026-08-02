@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jira Quality Gates — Tushar Sonawane</title>
+<meta name="description" content="Automated checks that surface Jira data-quality issues across every level of the hierarchy, before bad data reaches a leadership report.">
+<meta property="og:title" content="Jira Quality Gates — Tushar Sonawane">
+<meta property="og:description" content="Automated checks catching Jira data-quality issues across every hierarchy level before they reach leadership reporting.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../assets/images/og-image.jpg">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">TS</span>
+      <span class="brand-text"><span class="name">Tushar Sonawane</span><span class="role">Senior Scrum Master</span></span>
+    </a>
+    <nav class="nav-links" data-nav-links aria-label="Primary">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#impact">Impact</a>
+      <a href="../pages/certifications.html">Certifications</a>
+      <a href="../pages/awards.html">Awards</a>
+      <a href="../pages/beyond-delivery.html">Beyond Delivery</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark theme"></button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="back-link" href="../index.html#work">← Back to work</a>
+      <span class="eyebrow">Data Quality</span>
+      <h1>Jira Quality Gates</h1>
+      <p class="sub" style="color:var(--text-muted); max-width:60ch;">A set of automated checks that catch broken, missing, or inconsistent Jira data at every level of the hierarchy — Business Epic down to Story — before it quietly poisons a dashboard.</p>
+      <div class="case-meta">
+        <div><div class="meta-label">Role</div>Senior Scrum Master, reporting integrity</div>
+        <div><div class="meta-label">Tools</div>Jira · JQL</div>
+        <div><div class="meta-label">Scope</div>Five-level custom hierarchy</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="case-flow">
+      <div class="case-flow-step is-current"><span class="step-label">01 · Problem</span></div>
+      <div class="case-flow-step"><span class="step-label">02 · Approach</span></div>
+      <div class="case-flow-step"><span class="step-label">03 · Solution</span></div>
+      <div class="case-flow-step"><span class="step-label">04 · Impact</span></div>
+    </div>
+
+    <article class="case-body">
+      <h2>Problem</h2>
+      <p>Every reporting layer above the team — velocity charts, quarterly rollups, executive dashboards — inherited whatever mess existed underneath: stories with no parent link, epics with no due date, orphaned issues sitting outside any portfolio. None of it was visible until a number on a dashboard looked obviously wrong, at which point tracing the bad record back through five hierarchy levels ate hours.</p>
+
+      <h2>Approach</h2>
+      <p>Rather than clean the backlog once and hope it stayed clean, the goal was a recurring gate — a check that runs on its own and flags what's broken before it reaches a report.</p>
+      <ul>
+        <li>Mapped the failure modes worth catching at each level of the hierarchy: missing due dates, unlinked children, empty required fields, stale in-progress items</li>
+        <li>Wrote JQL-based queries for each failure mode, scoped per hierarchy level so a Business Epic issue doesn't get lost among Story-level noise</li>
+        <li>Prioritized issues that were silent — the ones that don't block a team's daily work but do quietly corrupt a rollup number</li>
+      </ul>
+
+      <h2>Solution</h2>
+      <p>A recurring set of JQL-based gates, one per data-quality rule, run across the hierarchy and surfaced as a simple pass/warn/fail view — the same red/amber/green pattern used in delivery reporting, but pointed at the data feeding that reporting instead of the delivery itself. Anything flagged gets routed back to the item's owner rather than surfacing as an unexplained anomaly on a leadership dashboard weeks later.</p>
+
+      <h2>Impact</h2>
+      <p>Data-quality issues get caught and routed to an owner before they reach a report, not after someone questions a number in a leadership review. It has also made the underlying hierarchy migration and reporting work more defensible, since the data feeding it is checked on a cadence rather than assumed clean.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-copy">© <span data-year></span> Tushar Sonawane</p>
+  </div>
+</footer>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

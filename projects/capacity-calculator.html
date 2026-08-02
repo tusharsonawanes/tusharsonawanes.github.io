@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Capacity Calculator — Tushar Sonawane</title>
+<meta name="description" content="Live-refreshing Expected vs Actual capacity charts across five teams, pulled directly from Jira, built to de-risk SAFe PI quarterly planning.">
+<meta property="og:title" content="Dynamic Capacity Calculator — Tushar Sonawane">
+<meta property="og:description" content="Live Expected vs Actual capacity charts across five teams, pulled directly from Jira for SAFe PI quarterly planning.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../assets/images/og-image.jpg">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">TS</span>
+      <span class="brand-text"><span class="name">Tushar Sonawane</span><span class="role">Senior Scrum Master</span></span>
+    </a>
+    <nav class="nav-links" data-nav-links aria-label="Primary">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#impact">Impact</a>
+      <a href="../pages/certifications.html">Certifications</a>
+      <a href="../pages/awards.html">Awards</a>
+      <a href="../pages/beyond-delivery.html">Beyond Delivery</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark theme"></button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="back-link" href="../index.html#work">← Back to work</a>
+      <span class="eyebrow">Delivery Planning</span>
+      <h1>Dynamic Capacity Calculator</h1>
+      <p class="sub" style="color:var(--text-muted); max-width:60ch;">Expected vs Actual capacity, refreshed live from Jira, so a PI planning room is negotiating with real numbers instead of a spreadsheet someone updated three weeks ago.</p>
+      <div class="case-meta">
+        <div><div class="meta-label">Role</div>Senior Scrum Master, capacity & PI planning</div>
+        <div><div class="meta-label">Tools</div>Jira API · Live data feed</div>
+        <div><div class="meta-label">Scope</div>Five teams, one value stream</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="case-flow">
+      <div class="case-flow-step is-current"><span class="step-label">01 · Problem</span></div>
+      <div class="case-flow-step"><span class="step-label">02 · Approach</span></div>
+      <div class="case-flow-step"><span class="step-label">03 · Solution</span></div>
+      <div class="case-flow-step"><span class="step-label">04 · Impact</span></div>
+    </div>
+
+    <article class="case-body">
+      <h2>Problem</h2>
+      <p>Quarterly PI planning kept running into the same wall: the capacity numbers each team walked in with were manually compiled, already stale, and rarely matched what actually landed once the quarter started. Planning conversations spent more time arguing over whose number was right than deciding what to commit to.</p>
+
+      <h2>Approach</h2>
+      <p>Instead of another static capacity spreadsheet template, the goal was a calculator that pulled its own numbers.</p>
+      <ul>
+        <li>Connected directly to Jira's API so committed capacity and actual delivered work refresh without anyone re-entering data</li>
+        <li>Built Expected vs Actual views per team and rolled up across the full value stream, so a PI room can see both the individual team picture and the aggregate at once</li>
+        <li>Added rolling averages (e.g. 3-sprint) rather than single-sprint snapshots, since one noisy sprint shouldn't reset a team's planning baseline</li>
+      </ul>
+
+      <h2>Solution</h2>
+      <p>A live dashboard with three views used together: a monthly Teamwise velocity breakdown, a rolling 3-sprint average per team to smooth out noise, and a Fresh-vs-Spilled work split so a team's actual predictability — not just its raw output — is visible before commitments are made. Capacity utilization is shown against plan, month over month, so over- or under-commitment shows up immediately rather than at quarter-end.</p>
+
+      <h2>Impact</h2>
+      <p>PI planning conversations now start from one live, shared number instead of five separately-maintained spreadsheets. Teams carrying chronic spillover are visible before the quarter starts, not after, which has shifted planning discussions from "whose number is right" to "what do we actually do about this team's predictability."</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-copy">© <span data-year></span> Tushar Sonawane</p>
+  </div>
+</footer>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

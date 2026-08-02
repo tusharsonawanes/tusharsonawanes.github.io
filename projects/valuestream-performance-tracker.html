@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Value Stream (Multi-Team) Performance Tracker — Tushar Sonawane</title>
+<meta name="description" content="A single reporting layer rolling up velocity, spillover, and capacity utilization across five teams in one value stream.">
+<meta property="og:title" content="Value Stream (Multi-Team) Performance Tracker — Tushar Sonawane">
+<meta property="og:description" content="Velocity, spillover, and capacity utilization rolled up across five teams in one value stream.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../assets/images/og-image.jpg">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+  .case-figure { margin: var(--space-6) 0; }
+  .case-figure img { width: 100%; border: 1px solid var(--border); border-radius: var(--radius-m); display: block; }
+  .case-figure figcaption { margin-top: var(--space-2); font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-faint); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">TS</span>
+      <span class="brand-text"><span class="name">Tushar Sonawane</span><span class="role">Senior Scrum Master</span></span>
+    </a>
+    <nav class="nav-links" data-nav-links aria-label="Primary">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#impact">Impact</a>
+      <a href="../pages/certifications.html">Certifications</a>
+      <a href="../pages/awards.html">Awards</a>
+      <a href="../pages/beyond-delivery.html">Beyond Delivery</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark theme"></button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="back-link" href="../index.html#work">← Back to work</a>
+      <span class="eyebrow">Reporting</span>
+      <h1>Value Stream (Multi-Team) Performance Tracker</h1>
+      <p class="sub" style="color:var(--text-muted); max-width:60ch;">One rolled-up view of velocity, spillover, and capacity utilization across five teams in a single value stream — built to replace five separate team-level reports nobody had time to compare side by side.</p>
+      <div class="case-meta">
+        <div><div class="meta-label">Role</div>Senior Scrum Master, value-stream reporting</div>
+        <div><div class="meta-label">Tools</div>MicroStrategy · SQL</div>
+        <div><div class="meta-label">Scope</div>Five teams, one value stream</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="case-flow">
+      <div class="case-flow-step is-current"><span class="step-label">01 · Problem</span></div>
+      <div class="case-flow-step"><span class="step-label">02 · Approach</span></div>
+      <div class="case-flow-step"><span class="step-label">03 · Solution</span></div>
+      <div class="case-flow-step"><span class="step-label">04 · Impact</span></div>
+    </div>
+
+    <article class="case-body">
+      <h2>Problem</h2>
+      <p>Five teams inside one value stream each reported velocity and capacity on their own board, in their own format. Comparing performance across the value stream — or spotting which team was chronically overcommitting — meant manually stitching together five separate exports before every planning or leadership review.</p>
+
+      <h2>Approach</h2>
+      <p>The goal was one rolled-up reporting layer that still preserved a per-team drill-down, rather than forcing a choice between the aggregate view and the team-level detail.</p>
+      <ul>
+        <li>Standardized how each team's velocity, spillover, and capacity data fed into a shared reporting model</li>
+        <li>Built a value-stream-level roll-up alongside a team-by-team breakdown, so leadership sees the whole picture and a Scrum Master can still see their own team's trend</li>
+        <li>Used rolling averages, not single-sprint snapshots, so one noisy sprint doesn't distort the read on a team's real trend</li>
+      </ul>
+
+      <h2>Solution</h2>
+      <p>A single dashboard covering three angles on the same underlying data: a stacked teamwise velocity view across the value stream, a rolling 3-sprint average per team to smooth out noise, and a fresh-vs-spilled work split to separate genuine throughput from carried-over work.</p>
+
+      <figure class="case-figure">
+        <img src="../assets/images/projects/valuestream-tracker.jpg" alt="Teamwise velocity, rolling 3-sprint average, and fresh vs spilled work charts across five teams">
+        <figcaption>Teamwise velocity · rolling 3-sprint average · fresh vs. spilled work, across all five teams</figcaption>
+      </figure>
+
+      <p>A capacity-utilization view tracks each team's plan-vs-actual gap month over month, and a monthly spill trend surfaces which teams are carrying over work rather than closing it — both rolled up with a 3-sprint spill average so a single bad sprint doesn't unfairly flag a team.</p>
+
+      <figure class="case-figure">
+        <img src="../assets/images/projects/valuestream-tracker-2.jpg" alt="Capacity utilization, monthly spills, and rolling 3-sprint spill average charts">
+        <figcaption>Capacity utilization vs. plan · monthly spill trend · rolling 3-sprint spill average</figcaption>
+      </figure>
+
+      <p>Underneath the roll-up, each team still gets its own velocity trendline, so a Scrum Master reviewing their own team isn't stuck reading it out of a value-stream-wide aggregate.</p>
+
+      <figure class="case-figure">
+        <img src="../assets/images/projects/valuestream-tracker-3.jpg" alt="Individual team velocity trend charts for each of the five teams">
+        <figcaption>Per-team velocity trend, drilled down from the same underlying dataset</figcaption>
+      </figure>
+
+      <h2>Impact</h2>
+      <p>Planning and leadership reviews now start from one consistent dataset instead of five reconciled exports. Teams with a chronic spillover pattern are visible in the rolled-up view immediately, rather than surfacing only when someone happens to compare boards manually.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-copy">© <span data-year></span> Tushar Sonawane</p>
+  </div>
+</footer>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

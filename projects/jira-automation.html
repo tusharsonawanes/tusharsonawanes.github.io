@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jira Automation — Tushar Sonawane</title>
+<meta name="description" content="A library of Jira automation rules — domain-wide governance rules and team-specific rules — cutting manual Jira admin work across the value stream.">
+<meta property="og:title" content="Jira Automation — Tushar Sonawane">
+<meta property="og:description" content="Domain-wide and team-specific Jira automation rules, replacing manual board admin with consistent, rule-driven workflows.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../assets/images/og-image.jpg">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">TS</span>
+      <span class="brand-text"><span class="name">Tushar Sonawane</span><span class="role">Senior Scrum Master</span></span>
+    </a>
+    <nav class="nav-links" data-nav-links aria-label="Primary">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#impact">Impact</a>
+      <a href="../pages/certifications.html">Certifications</a>
+      <a href="../pages/awards.html">Awards</a>
+      <a href="../pages/beyond-delivery.html">Beyond Delivery</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark theme"></button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="back-link" href="../index.html#work">← Back to work</a>
+      <span class="eyebrow">Delivery Tooling</span>
+      <h1>Jira Automation</h1>
+      <p class="sub" style="color:var(--text-muted); max-width:60ch;">The skill I lean on most: a library of Jira automation rules running at two levels — domain-wide governance rules and team-specific rules — that replaced manual board admin with consistent, rule-driven workflows.</p>
+      <div class="case-meta">
+        <div><div class="meta-label">Role</div>Senior Scrum Master, automation owner</div>
+        <div><div class="meta-label">Tools</div>Jira Automation · JQL</div>
+        <div><div class="meta-label">Scope</div>Domain-level rules + 4 team-specific rule sets</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="case-flow">
+      <div class="case-flow-step is-current"><span class="step-label">01 · Problem</span></div>
+      <div class="case-flow-step"><span class="step-label">02 · Approach</span></div>
+      <div class="case-flow-step"><span class="step-label">03 · Solution</span></div>
+      <div class="case-flow-step"><span class="step-label">04 · Impact</span></div>
+    </div>
+
+    <article class="case-body">
+      <h2>Problem</h2>
+      <p>Every team was handling the same repetitive Jira admin — status transitions, SLA/ageing flags, label hygiene, notification routing — by hand, in slightly different ways. That inconsistency made the data underneath any rolled-up report harder to trust, and every new team meant reinventing the same rules from scratch.</p>
+
+      <h2>Approach</h2>
+      <p>Rather than one rigid rule set, automation needed to work at two levels at once: rules that had to hold true for every team in the domain, and rules a team could tailor for how it actually works day to day.</p>
+      <ul>
+        <li>Built domain-wide governance rules — agreed with RDEs — covering the non-negotiables: hierarchy integrity, mandatory fields, and cross-project linking</li>
+        <li>Layered team-specific rule sets on top for each team's own workflow quirks — custom transitions, component-based routing, notification preferences</li>
+        <li>Used JQL-driven triggers so rules stay precise about exactly which issues they touch, instead of blunt, hierarchy-wide automation</li>
+      </ul>
+
+      <h2>Solution</h2>
+      <p>A running library of automation rules covering auto-transitions on linked-issue status change, SLA and ageing alerts before something goes stale, label and field hygiene checks, and routing notifications to the right channel instead of flooding everyone. Domain rules ship once and apply everywhere; team rules stay owned by each team without breaking the shared baseline.</p>
+
+      <h2>Impact</h2>
+      <p>Manual Jira admin dropped sharply across all four teams, and the data quality issues that used to surface in leadership reporting became far rarer — directly feeding into the reliability of the <a href="jira-quality-gates.html" style="color:var(--accent-strong);">Jira Quality Gates</a> checks and the value-stream reporting layer. New teams now onboard onto the domain rule baseline in a fraction of the time it used to take to hand-build their automation from zero.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-copy">© <span data-year></span> Tushar Sonawane</p>
+  </div>
+</footer>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

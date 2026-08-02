@@ -28,22 +28,6 @@
       });
     }
 
-    /* ---------- mobile nav ---------- */
-    const navToggle = document.querySelector("[data-nav-toggle]");
-    const navLinks = document.querySelector("[data-nav-links]");
-    if (navToggle && navLinks) {
-      navToggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("is-open");
-        document.body.style.overflow = isOpen ? "hidden" : "";
-      });
-      navLinks.querySelectorAll("a").forEach((a) =>
-        a.addEventListener("click", () => {
-          navLinks.classList.remove("is-open");
-          document.body.style.overflow = "";
-        })
-      );
-    }
-
     renderData();
     initScrollReveal();
     initTestimonials();
@@ -74,6 +58,18 @@
     if (ctaSecondary) { ctaSecondary.textContent = d.hero.ctaSecondary.label; ctaSecondary.href = d.hero.ctaSecondary.href; }
     const photoCaption = document.querySelector("[data-photo-caption]");
     if (photoCaption) photoCaption.textContent = d.hero.photoCaption;
+    const certBadgeRow = document.querySelector("[data-hero-cert-badges]");
+    if (certBadgeRow && d.hero.certBadges) {
+      certBadgeRow.innerHTML = d.hero.certBadges
+        .map(
+          (b) => `
+        <div class="cert-badge">
+          <img src="${b.icon}" alt="${b.name} certification badge" loading="lazy">
+          <div class="cert-badge-text"><span class="cert-badge-name">${b.name}</span><span class="cert-badge-org">${b.org}</span></div>
+        </div>`
+        )
+        .join("");
+    }
     const contactRow = document.querySelector("[data-hero-contact-row]");
     if (contactRow) {
       const icons = {
@@ -195,6 +191,84 @@
     // Footer year
     const year = document.querySelector("[data-year]");
     if (year) year.textContent = new Date().getFullYear();
+
+    // Certifications page
+    function renderCertRow(c) {
+      return `
+        <div class="cert-row">
+          <img src="${c.image}" alt="${c.name} certificate" loading="lazy">
+          <div>
+            <div class="cert-row-name">${c.name}</div>
+            <div class="cert-row-issuer">${c.issuer}</div>
+            <p class="cert-row-brief">${c.brief}</p>
+          </div>
+        </div>`;
+    }
+    const certPm = document.querySelector("[data-cert-pm]");
+    if (certPm && d.certifications) {
+      const active = d.certifications.projectManagement.filter((c) => c.active);
+      certPm.innerHTML = active.length
+        ? active.map(renderCertRow).join("")
+        : `<div class="empty-state">Project management certifications will be added here soon.</div>`;
+    }
+    const certTech = document.querySelector("[data-cert-technical]");
+    if (certTech && d.certifications) {
+      const active = d.certifications.technical.filter((c) => c.active);
+      certTech.innerHTML = active.length
+        ? active.map(renderCertRow).join("")
+        : `<div class="empty-state">Technical certifications will be added here soon.</div>`;
+    }
+
+    // Awards page
+    const awardsGrid = document.querySelector("[data-awards-grid]");
+    const awardsEmpty = document.querySelector("[data-awards-empty]");
+    if (awardsGrid && d.awards) {
+      const active = d.awards.filter((a) => a.active);
+      if (active.length) {
+        awardsGrid.innerHTML = active
+          .map(
+            (a) => `
+          <div class="tile-card">
+            <img src="${a.image}" alt="${a.title}" loading="lazy">
+            <div class="tile-card-body">
+              <h3>${a.title}</h3>
+              <div class="tile-card-meta">${a.org} · ${a.year}</div>
+              <p>${a.description}</p>
+            </div>
+          </div>`
+          )
+          .join("");
+      } else if (awardsEmpty) {
+        awardsEmpty.style.display = "block";
+      }
+    }
+
+    // Beyond Delivery page
+    function renderTile(item) {
+      return `
+        <div class="tile-card">
+          <img src="${item.image}" alt="${item.title}" loading="lazy">
+          <div class="tile-card-body">
+            <h3>${item.title}</h3>
+            <div class="tile-card-meta">${item.context}</div>
+            <p>${item.description}</p>
+          </div>
+        </div>`;
+    }
+    const speakingGrid = document.querySelector("[data-beyond-speaking]");
+    const speakingEmpty = document.querySelector("[data-beyond-speaking-empty]");
+    if (speakingGrid && d.beyondDelivery) {
+      const active = d.beyondDelivery.speaking.filter((s) => s.active);
+      if (active.length) speakingGrid.innerHTML = active.map(renderTile).join("");
+      else if (speakingEmpty) speakingEmpty.style.display = "block";
+    }
+    const personalGrid = document.querySelector("[data-beyond-personal]");
+    const personalEmpty = document.querySelector("[data-beyond-personal-empty]");
+    if (personalGrid && d.beyondDelivery) {
+      const active = d.beyondDelivery.personal.filter((s) => s.active);
+      if (active.length) personalGrid.innerHTML = active.map(renderTile).join("");
+      else if (personalEmpty) personalEmpty.style.display = "block";
+    }
   }
 
   /* ---------- scroll reveal ---------- */

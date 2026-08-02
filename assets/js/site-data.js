@@ -9,11 +9,11 @@
 const SITE_DATA = {
   person: {
     name: "Tushar Sanjiv Sonawane",
-    role: "Senior Scrum Master · Technical Program Manager",
-    location: "Maharashtra, India",
-    email: "tushar-sonawane@outlook.com", // TODO: replace with real address
-    linkedin: "https://www.linkedin.com/in/tusharsonawanes", // TODO: replace with real URL
-    whatsapp: "917620942068", // TODO: replace with real number, country code + number, no + or spaces (e.g. India: 91XXXXXXXXXX)
+    role: "Senior Scrum Master · Enterprise Agile Delivery",
+    location: "Nashik–Pune, India (open to Mumbai)",
+    email: "tushar.sonawane@example.com", // TODO: replace with real address
+    linkedin: "https://www.linkedin.com/in/tushar-sonawane", // TODO: replace with real URL
+    whatsapp: "911234567890", // TODO: replace with real number, country code + number, no + or spaces (e.g. India: 91XXXXXXXXXX)
     resumeFile: "assets/resume/Tushar_Sonawane_Resume.pdf", // TODO: add real PDF here
   },
 
@@ -27,6 +27,13 @@ const SITE_DATA = {
     ctaPrimary: { label: "View my work", href: "#work" },
     ctaSecondary: { label: "Download resume", href: "assets/resume/Tushar_Sonawane_Resume.pdf" },
     photoCaption: "T-Systems ICT India · Deutsche Telekom Data Tribe",
+    // Shown in the full-width "Certified" band beneath the headline/photo.
+    // Swap `icon` for your real digital badge image any time — drop the
+    // file into assets/images/badges/ and update the path here.
+    certBadges: [
+      { name: "PSM I", org: "Professional Scrum Master · Scrum.org", icon: "assets/images/badges/psm1.svg" },
+      { name: "SAFe POPM", org: "Product Owner/Product Manager · Scaled Agile", icon: "assets/images/badges/safe-popm.svg" },
+    ],
   },
 
   stats: [
@@ -48,44 +55,54 @@ const SITE_DATA = {
       href: "projects/data-lineage-tracker.html",
     },
     {
-      id: "ado-migration",
-      title: "Jira → Azure DevOps Migration",
-      category: "Delivery Architecture",
-      tag: "Jira · Azure DevOps",
+      id: "capacity-calculator",
+      title: "Dynamic Capacity Calculator",
+      category: "Delivery Planning",
+      tag: "Jira API · Live Data",
       summary:
-        "Architected the work-item hierarchy, board structure, and migration runbook to move four teams off Jira onto Azure DevOps with zero delivery downtime.",
-      thumb: "assets/images/projects/ado-migration.svg",
-      href: "projects/ado-migration.html",
+        "Live-refreshing Expected vs Actual capacity charts across five teams, pulled directly from Jira, used to sanity-check SAFe PI quarterly planning before it's locked in.",
+      thumb: "assets/images/projects/capacity-calculator.svg",
+      href: "projects/capacity-calculator.html",
     },
     {
-      id: "agile-operating-model",
-      title: "Enterprise Agile Operating Model",
-      category: "Agile Transformation",
-      tag: "SAFe · Spotify Model",
+      id: "jira-quality-gates",
+      title: "Jira Quality Gates",
+      category: "Data Quality",
+      tag: "Jira · JQL",
       summary:
-        "Designed a Tribe → Domain → Value Stream → Team operating model, tailored from Spotify-style principles, to align four squads to one product outcome.",
-      thumb: "assets/images/projects/operating-model.svg",
-      href: "projects/agile-operating-model.html",
+        "A set of automated checks that surface data-quality issues across every level of the Jira hierarchy, before bad data reaches a leadership report.",
+      thumb: "assets/images/projects/quality-gates.svg",
+      href: "projects/jira-quality-gates.html",
     },
     {
-      id: "confluence-table-transformer",
-      title: "Confluence Table Transformer",
-      category: "Tooling & Automation",
-      tag: "Confluence · Power Automate",
+      id: "portfolio-knowledge-hub",
+      title: "Multi-Portfolio Knowledge Hub",
+      category: "Enablement",
+      tag: "Confluence · Jira Macros",
       summary:
-        "A capacity-reporting utility that reshapes raw Confluence tables into sprint-ready capacity views automatically, removing a manual weekly task.",
-      thumb: "assets/images/projects/table-transformer.svg",
-      href: "projects/confluence-table-transformer.html",
+        "A Portfolio → Program → Domain → Squad knowledge base covering team and product documentation, member/demographic analytics, hiring workflow, and skills evaluation — all live off Jira and Confluence.",
+      thumb: "assets/images/projects/knowledge-hub.svg",
+      href: "projects/portfolio-knowledge-hub.html",
     },
     {
-      id: "executive-dashboards",
-      title: "Executive Delivery Dashboards",
+      id: "valuestream-performance-tracker",
+      title: "Value Stream (Multi-Team) Performance Tracker",
       category: "Reporting",
-      tag: "MicroStrategy · Power Automate",
+      tag: "MicroStrategy · SQL",
       summary:
-        "A single-pane view of velocity, predictability, and flow metrics across four teams, built for leadership review without manual slide updates.",
-      thumb: "assets/images/projects/dashboards.svg",
-      href: "projects/executive-dashboards.html",
+        "A single reporting layer that rolls up velocity, spillover, and capacity utilization across five teams in one value stream, replacing five separate team-level views.",
+      thumb: "assets/images/projects/valuestream-tracker.jpg",
+      href: "projects/valuestream-performance-tracker.html",
+    },
+    {
+      id: "jira-automation",
+      title: "Jira Automation",
+      category: "Delivery Tooling",
+      tag: "Jira Automation · JQL",
+      summary:
+        "The skill I lean on most: a library of Jira automation rules — domain-wide governance rules plus team-specific rule sets — replacing manual board admin with consistent, rule-driven workflows.",
+      thumb: "assets/images/projects/jira-automation.svg",
+      href: "projects/jira-automation.html",
     },
   ],
 
@@ -152,11 +169,60 @@ const SITE_DATA = {
     ],
   },
 
+  // ---------------------------------------------------------------------
+  // CERTIFICATIONS PAGE — only items with active:true are shown. Fill in
+  // real details and flip active to true whenever you're ready to publish
+  // one. `image` should point at a photo/scan of the certificate/badge.
+  // ---------------------------------------------------------------------
+  certifications: {
+    technical: [
+      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
+    ],
+    projectManagement: [
+      { name: "Professional Scrum Master I (PSM I)", issuer: "Scrum.org", brief: "Validates core Scrum theory and practice — accountabilities, events, and artifacts applied correctly in real delivery.", image: "assets/images/badges/psm1.svg", active: true },
+      { name: "SAFe Product Owner / Product Manager (POPM)", issuer: "Scaled Agile, Inc.", brief: "Product ownership and management at scale — backlog strategy, PI planning, and value-stream alignment under SAFe.", image: "assets/images/badges/safe-popm.svg", active: true },
+      { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
+    ],
+  },
+
+  // ---------------------------------------------------------------------
+  // AWARDS & ACHIEVEMENTS PAGE — same active-flag pattern as above.
+  // ---------------------------------------------------------------------
+  awards: [
+    { title: "TBD — Award Title", org: "Awarding organization", year: "20XX", description: "Add a short, specific description of what this award recognized.", image: "assets/images/awards/placeholder.svg", active: false },
+    { title: "TBD — Award Title", org: "Awarding organization", year: "20XX", description: "Add a short, specific description of what this award recognized.", image: "assets/images/awards/placeholder.svg", active: false },
+    { title: "TBD — Award Title", org: "Awarding organization", year: "20XX", description: "Add a short, specific description of what this award recognized.", image: "assets/images/awards/placeholder.svg", active: false },
+  ],
+
+  // ---------------------------------------------------------------------
+  // BEYOND DELIVERY PAGE — speaking/facilitation work + personal pursuits.
+  // Same active-flag pattern.
+  // ---------------------------------------------------------------------
+  beyondDelivery: {
+    speaking: [
+      { title: "TBD — Session or Talk Title", context: "e.g. Internal guild session, guest lecture at [college]", description: "Add a short description of the audience, topic, and what you covered.", image: "assets/images/beyond/placeholder.svg", active: false },
+      { title: "TBD — Session or Talk Title", context: "e.g. Internal guild session, guest lecture at [college]", description: "Add a short description of the audience, topic, and what you covered.", image: "assets/images/beyond/placeholder.svg", active: false },
+    ],
+    personal: [
+      { title: "Motorcycle riding", context: "Personal pursuit", description: "Add a short line about your riding — routes, distance, or what it means to you.", image: "assets/images/beyond/placeholder.svg", active: false },
+      { title: "Swimming", context: "Personal pursuit", description: "Add a short line about swimming — how often, competitively or for fitness, etc.", image: "assets/images/beyond/placeholder.svg", active: false },
+    ],
+  },
+
+  // NOTE: this array is documentation only — actual nav links are hardcoded
+  // per-page (with correct relative paths) in each HTML file's <header>.
   nav: [
     { label: "Work", href: "#work" },
     { label: "Skills", href: "#skills" },
     { label: "Impact", href: "#impact" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Certifications", href: "pages/certifications.html" },
+    { label: "Awards", href: "pages/awards.html" },
+    { label: "Beyond Delivery", href: "pages/beyond-delivery.html" },
   ],
 };
