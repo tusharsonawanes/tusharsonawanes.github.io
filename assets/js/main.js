@@ -70,6 +70,18 @@
     if (ctaSecondary) { ctaSecondary.textContent = d.hero.ctaSecondary.label; ctaSecondary.href = d.hero.ctaSecondary.href; }
     const photoCaption = document.querySelector("[data-photo-caption]");
     if (photoCaption) photoCaption.textContent = d.hero.photoCaption;
+    const certBadgeRow = document.querySelector("[data-hero-cert-badges]");
+    if (certBadgeRow && d.hero.certBadges) {
+      certBadgeRow.innerHTML = d.hero.certBadges
+        .map(
+          (b) => `
+        <div class="cert-badge">
+          <img src="${b.icon}" alt="${b.name} certification badge" loading="lazy">
+          <div class="cert-badge-text"><span class="cert-badge-name">${b.name}</span><span class="cert-badge-org">${b.org}</span></div>
+        </div>`
+        )
+        .join("");
+    }
 
     // Stats
     const statRow = document.querySelector("[data-stat-row]");
