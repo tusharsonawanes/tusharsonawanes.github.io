@@ -13,6 +13,7 @@ const SITE_DATA = {
     location: "Nashik–Pune, India (open to Mumbai)",
     email: "tushar.sonawane@example.com", // TODO: replace with real address
     linkedin: "https://www.linkedin.com/in/tushar-sonawane", // TODO: replace with real URL
+    whatsapp: "911234567890", // TODO: replace with real number, country code + number, no + or spaces (e.g. India: 91XXXXXXXXXX)
     resumeFile: "assets/resume/Tushar_Sonawane_Resume.pdf", // TODO: add real PDF here
   },
 
@@ -26,14 +27,6 @@ const SITE_DATA = {
     ctaPrimary: { label: "View my work", href: "#work" },
     ctaSecondary: { label: "Download resume", href: "assets/resume/Tushar_Sonawane_Resume.pdf" },
     photoCaption: "T-Systems ICT India · Deutsche Telekom Data Tribe",
-    // Badges shown directly under the hero photo. Swap `icon` for your
-    // official digital badge image (downloaded from your certification
-    // account) any time — just drop the file into assets/images/badges/
-    // and update the path here. No other code needs to change.
-    certBadges: [
-      { name: "PSM I", org: "Scrum.org", icon: "assets/images/badges/psm1.svg" },
-      { name: "SAFe POPM", org: "Scaled Agile", icon: "assets/images/badges/safe-popm.svg" },
-    ],
   },
 
   stats: [

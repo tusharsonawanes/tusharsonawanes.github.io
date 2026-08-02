@@ -33,10 +33,14 @@
     const navLinks = document.querySelector("[data-nav-links]");
     if (navToggle && navLinks) {
       navToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("is-open");
+        const isOpen = navLinks.classList.toggle("is-open");
+        document.body.style.overflow = isOpen ? "hidden" : "";
       });
       navLinks.querySelectorAll("a").forEach((a) =>
-        a.addEventListener("click", () => navLinks.classList.remove("is-open"))
+        a.addEventListener("click", () => {
+          navLinks.classList.remove("is-open");
+          document.body.style.overflow = "";
+        })
       );
     }
 
@@ -70,15 +74,27 @@
     if (ctaSecondary) { ctaSecondary.textContent = d.hero.ctaSecondary.label; ctaSecondary.href = d.hero.ctaSecondary.href; }
     const photoCaption = document.querySelector("[data-photo-caption]");
     if (photoCaption) photoCaption.textContent = d.hero.photoCaption;
-    const certBadgeRow = document.querySelector("[data-hero-cert-badges]");
-    if (certBadgeRow && d.hero.certBadges) {
-      certBadgeRow.innerHTML = d.hero.certBadges
+    const contactRow = document.querySelector("[data-hero-contact-row]");
+    if (contactRow) {
+      const icons = {
+        linkedin:
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5v6M8 7.5v.01" stroke-linecap="round"/><path d="M12 16.5v-4a2.2 2.2 0 0 1 4.4 0v4" stroke-linecap="round"/></svg>',
+        mail:
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5 12 13l8.5-6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        whatsapp:
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.3 17.7 4 20l2.4-2.2A8 8 0 1 1 9 19l-2.7-1.3Z" stroke-linejoin="round"/><path d="M9.2 9.6c.2 2.6 2.4 4.8 5 5" stroke-linecap="round"/></svg>',
+      };
+      const links = [
+        { key: "linkedin", label: "LinkedIn", href: d.person.linkedin, external: true },
+        { key: "mail", label: "Email", href: `mailto:${d.person.email}`, external: false },
+        { key: "whatsapp", label: "WhatsApp", href: `https://wa.me/${d.person.whatsapp}`, external: true },
+      ];
+      contactRow.innerHTML = links
         .map(
-          (b) => `
-        <div class="cert-badge">
-          <img src="${b.icon}" alt="${b.name} certification badge" loading="lazy">
-          <div class="cert-badge-text"><span class="cert-badge-name">${b.name}</span><span class="cert-badge-org">${b.org}</span></div>
-        </div>`
+          (l) => `
+        <a class="hero-contact-icon" href="${l.href}" ${l.external ? 'target="_blank" rel="noopener"' : ""}>
+          ${icons[l.key]}<span>${l.label}</span>
+        </a>`
         )
         .join("");
     }
