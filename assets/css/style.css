@@ -39,7 +39,7 @@
   --radius-m: 12px;
   --radius-l: 20px;
 
-  --max-width: 1160px;
+  --max-width: 1360px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -85,6 +85,12 @@ button { font-family: inherit; cursor: pointer; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
 .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-4); }
+@media (min-width: 1600px) {
+  .wrap { max-width: 1560px; padding: 0 var(--space-5); }
+}
+@media (min-width: 1920px) {
+  .wrap { max-width: 1760px; }
+}
 .skip-link {
   position: absolute; left: -9999px; top: 0; background: var(--accent); color: var(--accent-contrast);
   padding: var(--space-2) var(--space-3); z-index: 200; border-radius: var(--radius-s);
@@ -183,18 +189,17 @@ button { font-family: inherit; cursor: pointer; }
   font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-faint); letter-spacing: 0.03em;
 }
 
-/* ---------- hero certification badges ---------- */
-.cert-badge-row { display: flex; gap: var(--space-3); margin-top: var(--space-4); flex-wrap: wrap; }
-.cert-badge {
-  display: flex; align-items: center; gap: var(--space-2); padding: 0.6rem 0.9rem;
+/* ---------- hero contact icons (LinkedIn / Mail / WhatsApp) ---------- */
+.hero-contact-row { display: flex; gap: var(--space-3); margin-top: var(--space-4); flex-wrap: wrap; }
+.hero-contact-icon {
+  display: flex; align-items: center; gap: var(--space-2); padding: 0.65rem 1rem;
   border: 1px solid var(--border); border-radius: var(--radius-s); background: var(--bg-elevated);
-  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease); flex: 1 1 auto; min-width: 0;
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease), color 0.2s var(--ease);
+  color: var(--text-muted); flex: 1 1 auto;
 }
-.cert-badge:hover { border-color: var(--border-strong); transform: translateY(-2px); }
-.cert-badge img { width: 26px; height: 26px; flex-shrink: 0; }
-.cert-badge-text { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
-.cert-badge-name { font-size: 0.82rem; font-weight: 600; color: var(--text); white-space: nowrap; }
-.cert-badge-org { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); white-space: nowrap; }
+.hero-contact-icon:hover { border-color: var(--accent); color: var(--text); transform: translateY(-2px); }
+.hero-contact-icon svg { width: 18px; height: 18px; flex-shrink: 0; }
+.hero-contact-icon span { font-size: 0.84rem; font-weight: 500; white-space: nowrap; }
 
 /* ---------- section shell ---------- */
 .section { padding: var(--space-7) 0; border-bottom: 1px solid var(--border); }
@@ -315,10 +320,15 @@ button { font-family: inherit; cursor: pointer; }
   .case-flow { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 680px) {
-  .nav-links { position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: var(--bg); flex-direction: column;
-    align-items: flex-start; padding: var(--space-5) var(--space-4); gap: var(--space-4); transform: translateX(100%);
-    transition: transform 0.3s var(--ease); border-top: 1px solid var(--border); }
-  .nav-links.is-open { transform: translateX(0); }
+  .nav-links {
+    display: none;
+    position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+    background: var(--bg); opacity: 1;
+    flex-direction: column; align-items: stretch; padding: var(--space-5) var(--space-4);
+    gap: 0; z-index: 500; overflow-y: auto; border-top: 1px solid var(--border);
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { padding: var(--space-4) 0; border-bottom: 1px solid var(--border); font-size: 1.05rem; }
   .nav-toggle-btn { display: flex; width: 38px; height: 38px; align-items: center; justify-content: center;
     border: 1px solid var(--border-strong); border-radius: var(--radius-s); background: transparent; color: var(--text); }
   .brand-text .role { display: none; }
@@ -326,15 +336,14 @@ button { font-family: inherit; cursor: pointer; }
   .stat-row { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
   .case-flow { grid-template-columns: 1fr; }
   .hero-photo { max-width: 100%; }
-  .cert-badge-row { gap: var(--space-2); }
-  .cert-badge { flex: 1 1 45%; }
+  .hero-contact-row { gap: var(--space-2); }
   .contact-links a { font-size: 0.88rem; }
   .site-footer .wrap { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 420px) {
   .hero h1 { font-size: clamp(1.7rem, 8vw, 2.1rem); }
   .stat-row { grid-template-columns: 1fr 1fr; }
-  .cert-badge { flex: 1 1 100%; }
+  .hero-contact-icon { flex: 1 1 100%; }
   .impact-card, .contact-panel { padding: var(--space-4); }
   .btn { padding: 0.75rem 1.1rem; font-size: 0.9rem; }
 }
