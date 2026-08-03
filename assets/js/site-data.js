@@ -27,13 +27,6 @@ const SITE_DATA = {
     ctaPrimary: { label: "View my work", href: "#work" },
     ctaSecondary: { label: "Download resume", href: "assets/resume/Tushar_Sonawane_Resume.pdf" },
     photoCaption: "T-Systems ICT India · Deutsche Telekom Data Tribe",
-    // Shown in the full-width "Certified" band beneath the headline/photo.
-    // Swap `icon` for your real digital badge image any time — drop the
-    // file into assets/images/badges/ and update the path here.
-    certBadges: [
-      { name: "PSM I", org: "Professional Scrum Master · Scrum.org", icon: "assets/images/badges/psm1.svg" },
-      { name: "SAFe POPM", org: "Product Owner/Product Manager · Scaled Agile", icon: "assets/images/badges/safe-popm.svg" },
-    ],
   },
 
   stats: [
