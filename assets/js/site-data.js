@@ -212,7 +212,7 @@ const SITE_DATA = {
   beyondDelivery: {
     speaking: [
       { title: "Building Tomorrow", context: "Expert talk at k.K.Wagh Polytechnic, Nashik", description: "Sharing Industrial Insights on the Process of Innovation Development & Technology Readiness Level (TRL).", image: "../assets/images/beyond/beyond1.jpg", active: true },
-      { title: "TBD — Session or Talk Title", context: "e.g. Internal guild session, guest lecture at [college]", description: "Add a short description of the audience, topic, and what you covered.", image: "../assets/images/beyond/placeholder.svg", active: false },
+      { title: "Unlocking Insights", context: "Interviewing Claudia Nemat (Deutsche Telekom Board Member)", description: "Interviewing Claudia unlocked key insights, strategic initiatives taken by telekom in various usecases", image: "../assets/images/beyond/beyond2.jpeg", active: false },
     ],
     personal: [
       { title: "Motorcycle riding", context: "Personal pursuit", description: "Add a short line about your riding — routes, distance, or what it means to you.", image: "../assets/images/beyond/placeholder.svg", active: false },
