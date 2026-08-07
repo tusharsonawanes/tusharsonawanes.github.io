@@ -163,24 +163,34 @@ const SITE_DATA = {
   },
 
   // ---------------------------------------------------------------------
+  // IMPORTANT — image paths below (certifications, awards, beyondDelivery)
+  // must start with "../assets/..." NOT "assets/...".
+  // Why: these three pages live inside /pages/, one folder deeper than the
+  // site root, so a path without "../" resolves to a URL like
+  // pages/assets/images/... which doesn't exist → broken image / 404.
+  // (Project thumbnails above this comment are the opposite: those render
+  // only on the root index.html, so they correctly do NOT have "../".)
+  // ---------------------------------------------------------------------
+
+  // ---------------------------------------------------------------------
   // CERTIFICATIONS PAGE — only items with active:true are shown. Fill in
   // real details and flip active to true whenever you're ready to publish
   // one. `image` should point at a photo/scan of the certificate/badge.
   // ---------------------------------------------------------------------
   certifications: {
     technical: [
-      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
-      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
-      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
-      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
-      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
     ],
     projectManagement: [
-      { name: "Professional Scrum Master I (PSM I)", issuer: "Scrum.org", brief: "Validates core Scrum theory and practice — accountabilities, events, and artifacts applied correctly in real delivery.", image: "assets/images/badges/psm1.svg", active: true },
-      { name: "SAFe Product Owner / Product Manager (POPM)", issuer: "Scaled Agile, Inc.", brief: "Product ownership and management at scale — backlog strategy, PI planning, and value-stream alignment under SAFe.", image: "assets/images/badges/safe-popm.svg", active: true },
-      { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
-      { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
-      { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "assets/images/certs/placeholder.svg", active: false },
+      { name: "Professional Scrum Master I (PSM I)", issuer: "Scrum.org", brief: "Validates core Scrum theory and practice — accountabilities, events, and artifacts applied correctly in real delivery.", image: "../assets/images/badges/psm1.svg", active: true },
+      { name: "SAFe Product Owner / Product Manager (POPM)", issuer: "Scaled Agile, Inc.", brief: "Product ownership and management at scale — backlog strategy, PI planning, and value-stream alignment under SAFe.", image: "../assets/images/badges/safe-popm.svg", active: true },
+      { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
+      { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
     ],
   },
 
@@ -188,9 +198,8 @@ const SITE_DATA = {
   // AWARDS & ACHIEVEMENTS PAGE — same active-flag pattern as above.
   // ---------------------------------------------------------------------
   awards: [
-    { title: "Rising Star 2019", org: "ESDS Software Solution Pvt. Ltd.", year: "2019", description: "Recognized for contritubitons to cloud development, research papers.", image: "assets/images/awards/award1.jpg", active: true },
-    { title: "Rising Star 2020", org: "ESDS Software Solution Pvt. Ltd.", year: "2020", description: "Add a short, specific description of what this award recognized.", image: "assets/images/awards/award2.jpg", active: true },
-    { title: "TBD — Award Title", org: "Awarding organization", year: "20XX", description: "Add a short, specific description of what this award recognized.", image: "assets/images/awards/placeholder.svg", active: false },
+    { title: "TBD — Award Title", org: "Awarding organization", year: "20XX", description: "Add a short, specific description of what this award recognized.", image: "../assets/images/awards/award2.jpg", active: true },
+    { title: "TBD — Award Title", org: "Awarding organization", year: "20XX", description: "Add a short, specific description of what this award recognized.", image: "../assets/images/awards/award1.jpg", active: true },
   ],
 
   // ---------------------------------------------------------------------
@@ -199,12 +208,12 @@ const SITE_DATA = {
   // ---------------------------------------------------------------------
   beyondDelivery: {
     speaking: [
-      { title: "TBD — Session or Talk Title", context: "e.g. Internal guild session, guest lecture at [college]", description: "Add a short description of the audience, topic, and what you covered.", image: "assets/images/beyond/placeholder.svg", active: false },
-      { title: "TBD — Session or Talk Title", context: "e.g. Internal guild session, guest lecture at [college]", description: "Add a short description of the audience, topic, and what you covered.", image: "assets/images/beyond/placeholder.svg", active: false },
+      { title: "TBD — Session or Talk Title", context: "e.g. Internal guild session, guest lecture at [college]", description: "Add a short description of the audience, topic, and what you covered.", image: "../assets/images/beyond/placeholder.svg", active: false },
+      { title: "TBD — Session or Talk Title", context: "e.g. Internal guild session, guest lecture at [college]", description: "Add a short description of the audience, topic, and what you covered.", image: "../assets/images/beyond/placeholder.svg", active: false },
     ],
     personal: [
-      { title: "Motorcycle riding", context: "Personal pursuit", description: "Add a short line about your riding — routes, distance, or what it means to you.", image: "assets/images/beyond/placeholder.svg", active: false },
-      { title: "Swimming", context: "Personal pursuit", description: "Add a short line about swimming — how often, competitively or for fitness, etc.", image: "assets/images/beyond/placeholder.svg", active: false },
+      { title: "Motorcycle riding", context: "Personal pursuit", description: "Add a short line about your riding — routes, distance, or what it means to you.", image: "../assets/images/beyond/placeholder.svg", active: false },
+      { title: "Swimming", context: "Personal pursuit", description: "Add a short line about swimming — how often, competitively or for fitness, etc.", image: "../assets/images/beyond/placeholder.svg", active: false },
     ],
   },
 
