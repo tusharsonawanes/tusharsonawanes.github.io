@@ -198,6 +198,7 @@ const SITE_DATA = {
   // AWARDS & ACHIEVEMENTS PAGE — same active-flag pattern as above.
   // ---------------------------------------------------------------------
   awards: [
+    { title: "Customer Hero 2022", org: "ESDS Software Solution Pvt. Ltd.", year: "2022", description: "Handling additional project management responsibilities alongwith development tasks.", image: "../assets/images/awards/award3.jpg", active: true },
     { title: "Rising Star 2020", org: "ESDS Software Solution Pvt. Ltd.", year: "2020", description: "Single handedly led end-to-end development of eNlight Meet - A Video Conferencing SaaS offering.", image: "../assets/images/awards/award2.jpg", active: true },
     { title: "Rising Star 2019", org: "ESDS Software Solution Pvt. Ltd.", year: "2019", description: "Sustainable contributions to eNlight Cloud through detailed research papers and scalable solutions.", image: "../assets/images/awards/award1.jpg", active: true },
   ],
