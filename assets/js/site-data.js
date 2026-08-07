@@ -186,8 +186,8 @@ const SITE_DATA = {
       { name: "TBD — Technical Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
     ],
     projectManagement: [
-      { name: "Professional Scrum Master I (PSM I)", issuer: "Scrum.org", brief: "Validates core Scrum theory and practice — accountabilities, events, and artifacts applied correctly in real delivery.", image: "../assets/images/badges/psm1.svg", active: true },
-      { name: "SAFe Product Owner / Product Manager (POPM)", issuer: "Scaled Agile, Inc.", brief: "Product ownership and management at scale — backlog strategy, PI planning, and value-stream alignment under SAFe.", image: "../assets/images/badges/safe-popm.svg", active: true },
+    //  { name: "Professional Scrum Master I (PSM I)", issuer: "Scrum.org", brief: "Validates core Scrum theory and practice — accountabilities, events, and artifacts applied correctly in real delivery.", image: "../assets/images/badges/psm1.svg", active: true },
+      { name: "SAFe Product Owner / Product Manager (POPM)", issuer: "Scaled Agile, Inc.", brief: "Product ownership and management at scale — backlog strategy, PI planning, and value-stream alignment under SAFe.", image: "../assets/images/badges/safe-popm.svg", active: true },-->
       { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
       { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
       { name: "TBD — PM Certification", issuer: "Issuing body", brief: "Add a one-line summary of what this certifies and why it matters to your delivery work.", image: "../assets/images/certs/placeholder.svg", active: false },
