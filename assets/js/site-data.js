@@ -211,7 +211,7 @@ const SITE_DATA = {
   // ---------------------------------------------------------------------
   beyondDelivery: {
     speaking: [
-      { title: "TBD — Session or Talk Title", context: "e.g. Internal guild session, guest lecture at [college]", description: "Add a short description of the audience, topic, and what you covered.", image: "../assets/images/beyond/placeholder.svg", active: false },
+      { title: "Building Tomorrow", context: "Expert talk at k.K.Wagh Polytechnic, Nashik", description: "Sharing Industrial Insights on the Process of Innovation Development & Technology Readiness Level (TRL).", image: "../assets/images/beyond/beyond1.jpg", active: true },
       { title: "TBD — Session or Talk Title", context: "e.g. Internal guild session, guest lecture at [college]", description: "Add a short description of the audience, topic, and what you covered.", image: "../assets/images/beyond/placeholder.svg", active: false },
     ],
     personal: [
