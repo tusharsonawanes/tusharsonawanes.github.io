@@ -29,8 +29,13 @@ const SITE_DATA = {
     photoCaption: "T-Systems ICT India · Deutsche Telekom Data Tribe",
   },
 
+  // Used to auto-calculate the "Years in Agile delivery" stat below —
+  // update this one date if your start date ever needs correcting, and
+  // the number on the homepage recalculates itself on every page load.
+  experienceStartDate: "2019-04-22",
+
   stats: [
-    { value: "7.3+", label: "Years in Agile delivery" },
+    { computed: "experienceYears", label: "Years in Agile delivery" },
     { value: "4", label: "Teams led concurrently" },
     { value: "2", label: "Certifications — PSM I, SAFe POPM" },
     { value: "1", label: "Enterprise value stream owned end-to-end" },

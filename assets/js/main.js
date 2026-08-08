@@ -83,12 +83,20 @@
         .join("");
     }
 
-    // Stats
+    // Stats (some are auto-computed — see `computed` field)
+    function statValue(s) {
+      if (s.computed === "experienceYears" && d.experienceStartDate) {
+        const start = new Date(d.experienceStartDate);
+        const years = (Date.now() - start.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
+        return years.toFixed(1) + "+";
+      }
+      return s.value;
+    }
     const statRow = document.querySelector("[data-stat-row]");
     if (statRow) {
       statRow.innerHTML = d.stats
         .map(
-          (s) => `<div class="stat"><div class="stat-value">${s.value}</div><div class="stat-label">${s.label}</div></div>`
+          (s) => `<div class="stat"><div class="stat-value">${statValue(s)}</div><div class="stat-label">${s.label}</div></div>`
         )
         .join("");
     }
