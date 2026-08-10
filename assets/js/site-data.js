@@ -220,7 +220,7 @@ const SITE_DATA = {
       { title: "Unlocking Insights", context: "Interviewing Claudia Nemat (Deutsche Telekom Board Member)", description: "Interviewing Claudia unlocked key insights, strategic initiatives taken by telekom in various usecases", image: "../assets/images/beyond/beyond2.jpeg", active: true },
     ],
     personal: [
-      { title: "Motorcycle riding", context: "Personal pursuit", description: "Add a short line about your riding — routes, distance, or what it means to you.", image: "../assets/images/beyond/placeholder.svg", active: false },
+      { title: "Motorcycle riding", context: "Personal pursuit", description: "My meditation", image: "../assets/images/beyond/beyond1_1.jpg", active: true },
       { title: "Swimming", context: "Personal pursuit", description: "Add a short line about swimming — how often, competitively or for fitness, etc.", image: "../assets/images/beyond/placeholder.svg", active: false },
     ],
   },
