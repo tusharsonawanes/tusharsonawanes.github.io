@@ -11,9 +11,9 @@ const SITE_DATA = {
     name: "Tushar Sanjiv Sonawane",
     role: "Senior Scrum Master · Enterprise Agile Delivery",
     location: "Nashik–Pune, India (open to Mumbai)",
-    email: "tushar.sonawane@example.com", // TODO: replace with real address
-    linkedin: "https://www.linkedin.com/in/tushar-sonawane", // TODO: replace with real URL
-    whatsapp: "911234567890", // TODO: replace with real number, country code + number, no + or spaces (e.g. India: 91XXXXXXXXXX)
+    email: "tushar-sonawane@outlook.com", // TODO: replace with real address
+    linkedin: "https://www.linkedin.com/in/tusharsonawanes", // TODO: replace with real URL
+    whatsapp: "+917620942068", // TODO: replace with real number, country code + number, no + or spaces (e.g. India: 91XXXXXXXXXX)
     resumeFile: "assets/resume/Tushar_Sonawane_Resume.pdf", // TODO: add real PDF here
   },
 
